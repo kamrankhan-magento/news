@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <update id="FME_Extensions::fmeextensions"
+                title="FME Extensions" translate="title" 
+                module="FME_News" sortOrder="30"
+                resource="FME_Extensions::fmeextensions"/>
+
+        <add id="FME_News::manage_snews"
+             title="News Manager" translate="title" 
+             module="FME_News" sortOrder="1" 
+             parent="FME_Extensions::fmeextensions"        	
+             resource="FME_News::main_menu"/>
+
+        <add id="FME_News::manage_news"
+             title="Manage News" 
+             module="FME_News" sortOrder="2" 
+             parent="FME_News::manage_snews" 
+             action="news/news/"  
+             resource="FME_News::manage_news" />
+
+        <add id="FME_News::configuration"
+             title="Configurations"
+             module="FME_News" sortOrder="4"
+             parent="FME_News::manage_snews" 
+             action="adminhtml/system_config/edit/section/news"
+             resource="FME_News::configuration" /> 
+    </menu>
+</config>
+
+ 
